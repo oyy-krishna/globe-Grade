@@ -1,7 +1,6 @@
 # 🌐 **Globe-Grade: Student Travel & Tourism Website** 🧳
 
 **Explore the world with Globe-Grade!**  
-[**Live Demo**](https://oyy-krishna.github.io/globe-Grade/)
 
 ## 📖 **Overview**
 
