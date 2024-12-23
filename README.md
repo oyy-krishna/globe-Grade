@@ -57,8 +57,5 @@ globe-Grade/
 
 Contributions are welcome! If you'd like to enhance the project, please fork the repository and create a pull request.
 
-## 📄 **License**
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
