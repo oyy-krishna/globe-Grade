@@ -6,11 +6,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Krishan",
   "license": "ISC",
-  "description": "",
+  "description": "This Project is all about travelling and helping students to explore more. ",
   "dependencies": {
-    "express": "^4.21.2",
-    "mongoose": "^8.9.2"
+    "express": "^4.21.2"
   }
 }
