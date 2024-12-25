@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Corner</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXRNk1vVX6QjK+YZfGLTyrk2Yg49i7L7ngpJ1IxV9mQ+P8jsy37Q6Ge1gC4Sgrl3FvNhLwKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80'); /* Example background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            
+            position:sticky;
+            top: 0;
+            width: 100%;
+            z-index: auto;
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ffcc00;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: #ffcc00;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        /* Feature and Video Containers */
+        .feature-container,
+        .video-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature,
+        .video-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .feature:hover,
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature img,
+        .video-container video {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .feature-info,
+        .video-info {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .feature-info h3,
+        .video-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .feature-info p,
+        .video-info p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Video Styling */
+        .video-container video {
+            border: 4px solid #333;
+            border-radius: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+
+            .feature,
+            .video-container {
+                flex-direction: column;
+                max-width: 100%;
+            }
+
+            .feature img,
+            .video-container video {
+                max-width: 100%;
+            }
+
+            .feature-info,
+            .video-info {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .section h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .feature-info h3,
+            .video-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .feature-info p,
+            .video-info p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Corner</h1>
+        <nav>
+            <ul>
+                <li><a href="#educational-tours">Educational Tours</a></li>
+                <li><a href="#accommodation">Accommodation</a></li>
+                <li><a href="#universities">Preferred Universities</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Educational Tours Section -->
+        <section id="educational-tours" class="section">
+            <h2>Educational Tours</h2>
+            <div class="video-section">
+                <div class="video-container">
+                    <video controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="feature-container">
+                <div class="feature">
+                    <img src="Images/Universities/Historical place.jpeg" alt="Educational Tour 1">
+                    <div class="feature-info">
+                        <h3>Historical Sites Tour</h3>
+                        <p>Explore historical landmarks and gain valuable knowledge about ancient civilizations on this educational tour.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <img src="Images/Universities/Science exploration.jpg" alt="Educational Tour 2">
+                    <div class="feature-info">
+                        <h3>Science Exploration</h3>
+                        <p>Visit top science museums and research centers to experience interactive exhibits and cutting-edge technology.</p>
+                    </div>
+                </div>
+                <!-- Add more educational tours as needed -->
+            </div>
+        </section>
+
+        <!-- Accommodation Section -->
+        <section id="accommodation" class="section">
+            <h2>Accommodation in Universities</h2>
+            <div class="feature-container">
+                <div class="feature">
+                    <img src="Images/Universities/Accommodation.jpeg" alt="University Accommodation 1">
+                    <div class="feature-info">
+                        <h3>University Dormitories</h3>
+                        <p>Stay in comfortable and secure dormitories with easy access to campus facilities and activities.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <img src="Images/Universities/Accommodation 2.jpeg" alt="University Accommodation 2">
+                    <div class="feature-info">
+                        <h3>Guest Housing</h3>
+                        <p>Enjoy a pleasant stay in guest houses affiliated with universities, providing a home-like environment for students.</p>
+                    </div>
+                </div>
+                <!-- Add more accommodation options as needed -->
+            </div>
+        </section>
+
+        <!-- Preferred Universities Section -->
+        <section id="universities" class="section">
+            <h2>Preferred Universities</h2>
+            <div class="feature-container">
+                <div class="feature">
+                    <img src="Images/Universities/University of oxford.jpg" alt="University 1">
+                    <div class="feature-info">
+                        <h3>University of Oxford</h3>
+                        <p>One of the world’s oldest and most prestigious universities, offering a range of academic programs and research opportunities.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <img src="Images/Universities/Massachusetts Institute of Technology (MIT).jpg" alt="University 2">
+                    <div class="feature-info">
+                        <h3>Massachusetts Institute of Technology (MIT)</h3>
+                        <p>Renowned for its cutting-edge research and innovation, MIT provides an excellent environment for academic growth and exploration.</p>
+                    </div>
+                </div>
+                <!-- Add more preferred universities as needed -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
